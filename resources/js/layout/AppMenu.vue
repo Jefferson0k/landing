@@ -14,22 +14,6 @@ const model = computed(() => [
             { label: 'Dashboard', icon: 'pi pi-fw pi-home', to: '/dashboard' }
         ]
     },
-    {
-        label: 'Gestión Administrativa',
-        items: [
-            hasPermission('ver clientes') && { label: 'Clientes', icon: 'pi pi-fw pi-users', to: '/clientes' },
-            hasPermission('ver prestamos') && { label: 'Préstamos', icon: 'pi pi-fw pi-briefcase', to: '/prestamos' },
-            hasPermission('ver pagos') && { label: 'Pagos', icon: 'pi pi-fw pi-credit-card', to: '/pagos' },
-            hasPermission('ver reportes') && { label: 'Reportes', icon: 'pi pi-fw pi-chart-line', to: '/reportes' }
-        ].filter(Boolean),
-    },
-    {
-        label: 'Usuarios',
-        items: [
-            hasPermission('ver usuarios') && { label: 'Gestión de Usuarios', icon: 'pi pi-fw pi-user-edit', to: '/usuario' },
-            hasPermission('ver roles') && { label: 'Roles', icon: 'pi pi-fw pi-check-square', to: '/roles' },
-        ].filter(Boolean),
-    }
 ].filter(section => section.items.length > 0));
 </script>
 
