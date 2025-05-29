@@ -6,37 +6,21 @@ import HighlightsWidget from '@/components/landing/HighlightsWidget.vue';
 import PricingWidget from '@/components/landing/PricingWidget.vue';
 import TopbarWidget from '@/components/landing/TopbarWidget.vue';
 import { Head } from '@inertiajs/vue3';
+
 </script>
 
 <template>
-  <Head title="Landing"></Head>
-  <div class="bg-surface-0 dark:bg-surface-900">
-    <div
-      id="home"
-      class="landing-wrapper overflow-hidden"
-      style="background: rgb(103, 144, 255) 100%"
-    >
-      <div class="py-6 px-6 mx-0 md:mx-12 lg:mx-20 lg:px-20 flex items-center justify-between relative lg:static">
-        <TopbarWidget />
-      </div>
-
-        <HeroWidget />
-
-      <div class="bg-surface-0 dark:bg-surface-900">
-        <FeaturesWidget />
-      </div>
-
-      <div class="bg-surface-0 dark:bg-surface-900">
-        <HighlightsWidget />
-      </div>
-
-      <div class="bg-surface-0 dark:bg-surface-900">
-        <PricingWidget />
-      </div>
-
-      <div class="bg-surface-0 dark:bg-surface-900">
-        <FooterWidget />
-      </div>
+    <Head title="Landing"></Head>
+    <div class="bg-surface-0 dark:bg-surface-900">
+        <div id="home" class="landing-wrapper overflow-hidden">
+            <div class="py-6 px-6 mx-0 md:mx-12 lg:mx-20 lg:px-20 flex items-center justify-between relative lg:static">
+                <TopbarWidget />
+            </div>
+            <HeroWidget />
+            <FeaturesWidget />
+            <HighlightsWidget />
+            <PricingWidget />
+            <FooterWidget />
+        </div>
     </div>
-  </div>
 </template>
