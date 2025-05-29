@@ -38,7 +38,7 @@ const goToProfile = () => {
                         />
                     </g>
                 </svg>
-                <span>Prestamos</span>
+                <span>ZUMA</span>
             </Link>
         </div>
 

@@ -1,132 +1,132 @@
 <template>
-    <div id="features" class="py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20">
-        <div class="grid grid-cols-12 gap-4 justify-center">
-            <div class="col-span-12 text-center mt-20 mb-6">
-                <div class="text-surface-900 dark:text-surface-0 font-normal mb-2 text-4xl">Marvelous Features</div>
-                <span class="text-muted-color text-2xl">Placerat in egestas erat...</span>
-            </div>
+  <div id="features" class="py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20">
+    <div class="grid grid-cols-12 md:grid-cols-2 gap-8 justify-center">
+      
+      <div class="col-span-12 text-center mt-20 mb-6 md:col-span-2">
+        <h2 class="text-surface-900 dark:text-surface-0 font-normal mb-2 text-4xl">
+          Conoce más Sobre Nosotros
+        </h2>
+        <p class="text-muted-color text-2xl max-w-3xl mx-auto">
+          Placerat in egestas erat... Aquí te presentamos nuestros servicios principales para ayudarte a crecer y optimizar tu negocio.
+        </p>
+      </div>
 
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pr-8 lg:pb-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-yellow-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-users !text-2xl text-yellow-700"></i>
-                        </div>
-                        <h5 class="mb-2 text-surface-900 dark:text-surface-0">Easy to Use</h5>
-                        <span class="text-surface-600 dark:text-surface-200">Posuere morbi leo urna molestie.</span>
-                    </div>
-                </div>
+      <!-- Card Inversiones -->
+      <div
+        class="col-span-12 md:col-span-1 p-0 pr-4 pb-8 mt-6 md:mt-0"
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }"
+      >
+        <div
+          style="height: 240px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(187, 199, 205, 0.2))"
+        >
+          <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full flex flex-col justify-between" style="border-radius: 8px">
+            <div>
+              <div
+                class="flex items-center justify-center bg-yellow-200 mb-4"
+                style="width: 3.5rem; height: 3.5rem; border-radius: 10px"
+              >
+                <i class="pi pi-fw pi-users !text-2xl text-yellow-700"></i>
+              </div>
+              <h5 class="mb-2 text-surface-900 dark:text-surface-0 text-xl font-semibold">Inversiones</h5>
+              <p class="text-surface-600 dark:text-surface-200 text-sm">
+                Impulsamos tu capital para lograr rendimientos seguros y sostenibles en el tiempo.
+              </p>
             </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pr-8 lg:pb-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-cyan-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-palette !text-2xl text-cyan-700"></i>
-                        </div>
-                        <h5 class="mb-2 text-surface-900 dark:text-surface-0">Fresh Design</h5>
-                        <span class="text-surface-600 dark:text-surface-200">Semper risus in hendrerit.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pb-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-indigo-200" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-map !text-2xl text-indigo-700"></i>
-                        </div>
-                        <div class="mt-6 mb-1 text-surface-900 dark:text-surface-0 text-xl font-semibold">Well Documented</div>
-                        <span class="text-surface-600 dark:text-surface-200">Non arcu risus quis varius quam quisque.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pr-8 lg:pb-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2), rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(145, 210, 204, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-slate-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-id-card !text-2xl text-slate-700"></i>
-                        </div>
-                        <div class="mt-6 mb-1 text-surface-900 dark:text-surface-0 text-xl font-semibold">Responsive Layout</div>
-                        <span class="text-surface-600 dark:text-surface-200">Nulla malesuada pellentesque elit.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pr-8 lg:pb-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2), rgba(246, 158, 188, 0.2)), linear-gradient(180deg, rgba(145, 226, 237, 0.2), rgba(160, 210, 250, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-orange-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-star !text-2xl text-orange-700"></i>
-                        </div>
-                        <div class="mt-6 mb-1 text-surface-900 dark:text-surface-0 text-xl font-semibold">Clean Code</div>
-                        <span class="text-surface-600 dark:text-surface-200">Condimentum lacinia quis vel eros.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pb-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(251, 199, 145, 0.2), rgba(246, 158, 188, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(212, 162, 221, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-pink-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-moon !text-2xl text-pink-700"></i>
-                        </div>
-                        <div class="mt-6 mb-1 text-surface-900 dark:text-surface-0 text-xl font-semibold">Dark Mode</div>
-                        <span class="text-surface-600 dark:text-surface-200">Convallis tellus id interdum velit laoreet.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pr-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(145, 210, 204, 0.2), rgba(160, 210, 250, 0.2)), linear-gradient(180deg, rgba(187, 199, 205, 0.2), rgba(145, 210, 204, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-teal-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-shopping-cart !text-2xl text-teal-700"></i>
-                        </div>
-                        <div class="mt-6 mb-1 text-surface-900 dark:text-surface-0 text-xl font-semibold">Ready to Use</div>
-                        <span class="text-surface-600 dark:text-surface-200">Mauris sit amet massa vitae.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg:pr-8 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(145, 210, 204, 0.2), rgba(212, 162, 221, 0.2)), linear-gradient(180deg, rgba(251, 199, 145, 0.2), rgba(160, 210, 250, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-blue-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-globe !text-2xl text-blue-700"></i>
-                        </div>
-                        <div class="mt-6 mb-1 text-surface-900 dark:text-surface-0 text-xl font-semibold">Modern Practices</div>
-                        <span class="text-surface-600 dark:text-surface-200">Elementum nibh tellus molestie nunc non.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-span-12 md:col-span-12 lg:col-span-4 p-0 lg-4 mt-6 lg:mt-0">
-                <div style="height: 160px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(160, 210, 250, 0.2), rgba(212, 162, 221, 0.2)), linear-gradient(180deg, rgba(246, 158, 188, 0.2), rgba(212, 162, 221, 0.2))">
-                    <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full" style="border-radius: 8px">
-                        <div class="flex items-center justify-center bg-purple-200 mb-4" style="width: 3.5rem; height: 3.5rem; border-radius: 10px">
-                            <i class="pi pi-fw pi-eye !text-2xl text-purple-700"></i>
-                        </div>
-                        <div class="mt-6 mb-1 text-surface-900 dark:text-surface-0 text-xl font-semibold">Privacy</div>
-                        <span class="text-surface-600 dark:text-surface-200">Neque egestas congue quisque.</span>
-                    </div>
-                </div>
-            </div>
-
-            <div
-                class="col-span-12 mt-20 mb-20 p-2 md:p-20"
-                style="border-radius: 20px; background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #efe1af 0%, #c3dcfa 100%)"
-            >
-                <div class="flex flex-col justify-center items-center text-center px-4 py-4 md:py-0">
-                    <div class="text-gray-900 mb-2 text-3xl font-semibold">Joséphine Miller</div>
-                    <span class="text-gray-600 text-2xl">Peak Interactive</span>
-                    <p class="text-gray-900 sm:line-height-2 md:line-height-4 text-2xl mt-6" style="max-width: 800px">
-                        “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.”
-                    </p>
-                    <img src="/demo/images/landing/peak-logo.svg" class="mt-6" alt="Company logo" />
-                </div>
-            </div>
+            <button class="mt-4 bg-yellow-600 text-white py-2 px-4 rounded hover:bg-yellow-700 transition">
+              Conocer más
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- Card Factoring -->
+      <div
+        class="col-span-12 md:col-span-1 p-0 pl-4 pb-8 mt-6 md:mt-0"
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-b-20 animate-duration-1000' }"
+      >
+        <div
+          style="height: 240px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(172, 180, 223, 0.2))"
+        >
+          <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full flex flex-col justify-between" style="border-radius: 8px">
+            <div>
+              <div
+                class="flex items-center justify-center bg-cyan-200 mb-4"
+                style="width: 3.5rem; height: 3.5rem; border-radius: 10px"
+              >
+                <i class="pi pi-fw pi-palette !text-2xl text-cyan-700"></i>
+              </div>
+              <h5 class="mb-2 text-surface-900 dark:text-surface-0 text-xl font-semibold">Factoring</h5>
+              <p class="text-surface-600 dark:text-surface-200 text-sm">
+                Financiamiento ágil basado en facturas para mejorar tu flujo de caja sin endeudamiento.
+              </p>
+            </div>
+            <button class="mt-4 bg-cyan-600 text-white py-2 px-4 rounded hover:bg-cyan-700 transition">
+              Conocer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Confirming -->
+      <div
+        class="col-span-12 md:col-span-1 p-0 pr-4 pb-8 mt-6 md:mt-0"
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 zoom-in-50 animate-duration-1000' }"
+      >
+        <div
+          style="height: 240px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(145, 226, 237, 0.2), rgba(172, 180, 223, 0.2)), linear-gradient(180deg, rgba(172, 180, 223, 0.2), rgba(246, 158, 188, 0.2))"
+        >
+          <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full flex flex-col justify-between" style="border-radius: 8px">
+            <div>
+              <div
+                class="flex items-center justify-center bg-indigo-200 mb-4"
+                style="width: 3.5rem; height: 3.5rem; border-radius: 10px"
+              >
+                <i class="pi pi-fw pi-map !text-2xl text-indigo-700"></i>
+              </div>
+              <h5 class="mb-2 text-surface-900 dark:text-surface-0 text-xl font-semibold">Confirming</h5>
+              <p class="text-surface-600 dark:text-surface-200 text-sm">
+                Servicio de pago anticipado a proveedores para optimizar tu cadena de suministro.
+              </p>
+            </div>
+            <button class="mt-4 bg-indigo-600 text-white py-2 px-4 rounded hover:bg-indigo-700 transition">
+              Conocer más
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card Cobranza Libre -->
+      <div
+        class="col-span-12 md:col-span-1 p-0 pl-4 pb-8 mt-6 md:mt-0"
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-16 animate-duration-1000' }"
+      >
+        <div
+          style="height: 240px; padding: 2px; border-radius: 10px; background: linear-gradient(90deg, rgba(187, 199, 205, 0.2), rgba(251, 199, 145, 0.2)), linear-gradient(180deg, rgba(253, 228, 165, 0.2), rgba(145, 210, 204, 0.2))"
+        >
+          <div class="p-4 bg-surface-0 dark:bg-surface-900 h-full flex flex-col justify-between" style="border-radius: 8px">
+            <div>
+              <div
+                class="flex items-center justify-center bg-slate-200 mb-4"
+                style="width: 3.5rem; height: 3.5rem; border-radius: 10px"
+              >
+                <i class="pi pi-fw pi-id-card !text-2xl text-slate-700"></i>
+              </div>
+              <h5 class="mb-2 text-surface-900 dark:text-surface-0 text-xl font-semibold">Cobranza Libre</h5>
+              <p class="text-surface-600 dark:text-surface-200 text-sm">
+                Gestión flexible y eficiente de cobros para maximizar tu recuperación de cartera.
+              </p>
+            </div>
+            <button class="mt-4 bg-slate-600 text-white py-2 px-4 rounded hover:bg-slate-700 transition">
+              Conocer más
+            </button>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </template>
+
+<script setup lang="ts">
+import AnimateOnScroll from 'primevue/animateonscroll';
+</script>
