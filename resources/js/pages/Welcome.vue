@@ -17,9 +17,9 @@ import { Head } from '@inertiajs/vue3';
                 <TopbarWidget />
             </div>
             <HeroWidget />
-            <FeaturesWidget />
+            <!--<FeaturesWidget />
             <HighlightsWidget />
-            <PricingWidget />
+            <PricingWidget />-->
             <FooterWidget />
         </div>
     </div>
