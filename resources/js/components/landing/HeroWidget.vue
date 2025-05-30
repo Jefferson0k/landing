@@ -38,9 +38,8 @@
             </div>
           </div>
         </div>
-      </div>
         <CustomesWidget />
-
+      </div>
     </div>
   </section>
 

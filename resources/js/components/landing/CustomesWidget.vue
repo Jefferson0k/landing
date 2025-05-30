@@ -76,6 +76,7 @@
         class="relative rounded-2xl shadow-xl transform hover:rotate-0 transition-transform duration-500 hover:-translate-y-1 border border-white/20 overflow-hidden max-w-xs">
         <div class="bg-transparent p-4">
           <img src="customers/F5.png" alt="" class="opacity-70 w-16 mx-auto transition-transform duration-300 hover:scale-105">
+        <br>
         </div>
         <div class="bg-white p-4 pt-0 rounded-t-none">
           <div class="flex justify-between items-center mb-4">
