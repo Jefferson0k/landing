@@ -1,82 +1,146 @@
 <template>
-    <div class="py-6 px-6 mx-0 mt-20 lg:mx-20">
-        <!-- Contenedor principal -->
-        <div class="grid grid-cols-12 gap-10">
-            <!-- Sección de información ZUMA -->
-            <div class="col-span-12 md:col-span-3 flex flex-col justify-between">
-                <div>
-                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
-                        ZUMA impulsa la creatividad y la innovación para un futuro más brillante.
-                    </p>
-                    <!-- Íconos sociales -->
-                    <div class="flex space-x-4 text-gray-600 dark:text-gray-300 text-2xl">
-                        <i class="fab fa-github hover:text-[#FF4929] cursor-pointer"></i>
-                        <i class="fab fa-x-twitter hover:text-[#FF4929] cursor-pointer"></i>
-                        <i class="fab fa-youtube hover:text-[#FF4929] cursor-pointer"></i>
-                        <i class="fab fa-discord hover:text-[#FF4929] cursor-pointer"></i>
+    <footer class="bg-[#6790FF] text-white pt-10">
+        <div class="max-w-7xl mx-auto px-6 lg:px-20 grid grid-cols-12 gap-10">
+
+            <!-- Columna 1: Logo + contacto + redes -->
+            <div class="col-span-12 md:col-span-3 text-sm">
+                <div class="mb-6">
+
+                    <h1>
+
+                        <span class="text-white relative">
+                            Zuma
+                            <div class="absolute -bottom-2 left-0 w-full h-1 bg-slate-200 rounded-full opacity-30">
+                            </div>
+                        </span>
+                    </h1>
+                </div>
+                <div class="flex space-x-3 text-xl mb-6">
+                    <div
+                        class="bg-white text-[#6790FF] hover:bg-[#FF4929] hover:text-white transition rounded-full w-10 h-10 flex items-center justify-center cursor-pointer">
+                        <i class="pi pi-facebook"></i>
+                    </div>
+                    <div
+                        class="bg-white text-[#6790FF] hover:bg-[#FF4929] hover:text-white transition rounded-full w-10 h-10 flex items-center justify-center cursor-pointer">
+                        <i class="pi pi-instagram"></i>
+                    </div>
+                    <div
+                        class="bg-white text-[#6790FF] hover:bg-[#FF4929] hover:text-white transition rounded-full w-10 h-10 flex items-center justify-center cursor-pointer">
+                        <i class="pi pi-whatsapp"></i>
+                    </div>
+                    <div
+                        class="bg-white text-[#6790FF] hover:bg-[#FF4929] hover:text-white transition rounded-full w-10 h-10 flex items-center justify-center cursor-pointer">
+                        <i class="pi pi-linkedin"></i>
+                    </div>
+                    <div
+                        class="bg-white text-[#6790FF] hover:bg-[#FF4929] hover:text-white transition rounded-full w-10 h-10 flex items-center justify-center cursor-pointer">
+                        <i class="pi pi-video"></i> <!-- TikTok or video icon -->
                     </div>
                 </div>
-                <!-- Copyright -->
-                <div class="mt-8 text-sm text-gray-500 dark:text-gray-400">
-                    <span>&copy; 2025 ZUMA</span>
-                    <span class="mx-4">|</span>
-                    <a href="#" class="hover:underline">Legal</a>
-                    <span class="mx-4">|</span>
-                    <a href="#" class="hover:underline">Status</a>
+
+                <div class="space-y-2 text-[#EDEAE4]">
+                    <p><i class="pi pi-phone mr-2"></i> <strong>616-6600</strong></p>
+                    <p><i class="pi pi-envelope mr-2"></i> <strong>garantia@garantiacapital.com</strong></p>
+                    <p><i class="pi pi-map-marker mr-2"></i> Av. Faustino Sánchez Carrión 417, Magdalena del Mar, Lima -
+                        Perú</p>
                 </div>
             </div>
 
-            <!-- Secciones de enlaces -->
-            <div class="col-span-12 md:col-span-9 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
-                <div>
-                    <h4 class="font-semibold text-gray-900 dark:text-white mb-4">Company</h4>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><a href="#" class="hover:underline">About Us</a></li>
-                        <li><a href="#" class="hover:underline">News</a></li>
-                        <li><a href="#" class="hover:underline">Careers</a></li>
-                        <li><a href="#" class="hover:underline">Media Kit</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-gray-900 dark:text-white mb-4">Resources</h4>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><a href="#" class="hover:underline">Get Started</a></li>
-                        <li><a href="#" class="hover:underline">Learn</a></li>
-                        <li><a href="#" class="hover:underline">Case Studies</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-gray-900 dark:text-white mb-4">Community</h4>
-                    <ul class="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li><a href="#" class="hover:underline">Discord</a></li>
-                        <li><a href="#" class="hover:underline">FAQ</a></li>
-                        <li><a href="#" class="hover:underline">Blog</a></li>
-                    </ul>
-                </div>
+            <!-- Columna 2: Préstamos e inversiones -->
+            <div class="col-span-12 md:col-span-3 text-sm text-[#EDEAE4]">
+                <h4 class="font-bold text-white mb-2">Préstamos</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2 group cursor-pointer">
+                        <div
+                            class="bg-white text-[#6790FF] group-hover:bg-[#FF4929] group-hover:text-white transition rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="pi pi-car"></i>
+                        </div>
+                        <span class="text-[#EDEAE4] group-hover:text-white font-medium">Préstamo con garantía
+                            vehicular</span>
+                    </li>
+                    <li class="flex items-center space-x-2 group cursor-pointer">
+                        <div
+                            class="bg-white text-[#6790FF] group-hover:bg-[#FF4929] group-hover:text-white transition rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="pi pi-home"></i>
+                        </div>
+                        <span class="text-[#EDEAE4] group-hover:text-white font-medium">Préstamo hipotecario</span>
+                    </li>
+                    <li class="flex items-center space-x-2 group cursor-pointer">
+                        <div
+                            class="bg-white text-[#6790FF] group-hover:bg-[#FF4929] group-hover:text-white transition rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="pi pi-building"></i>
+                        </div>
+                        <span class="text-[#EDEAE4] group-hover:text-white font-medium">Préstamo constructor</span>
+                    </li>
+                </ul>
+
+                <h4 class="font-bold text-white mt-4 mb-2">Inversiones</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2 group cursor-pointer">
+                        <div
+                            class="bg-white text-[#6790FF] group-hover:bg-[#FF4929] group-hover:text-white transition rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="pi pi-wallet"></i>
+                        </div>
+                        <span class="text-[#EDEAE4] group-hover:text-white font-medium">Renta fija</span>
+                    </li>
+                </ul>
+                <h4 class="font-bold text-white mt-4 mb-2">Factoring</h4>
+                <h4 class="font-bold text-white mt-2">Confirming</h4>
             </div>
 
-            <!-- ZUMA final -->
-            <div class="col-span-12">
-                <div class="w-full h-[400px] overflow-hidden flex items-center justify-center">
-                    <h1 class="text-[400px] font-bold leading-none" style="color: #EDEAE4;">
-                        Zu<span class="font-extrabold">m</span>a
-                    </h1>
+            <!-- Columna 3: Nosotros -->
+            <div class="col-span-12 md:col-span-3 text-sm text-[#EDEAE4]">
+                <h4 class="font-bold text-white mb-2">Nosotros</h4>
+                <ul class="space-y-1">
+                    <li>Noticias</li>
+                    <li><strong>Únete al equipo</strong></li>
+                    <li>Contacto</li>
+                </ul>
+            </div>
+
+            <!-- Columna 4: FAQ + Legales -->
+            <div class="col-span-12 md:col-span-3 text-sm text-[#EDEAE4]">
+                <h4 class="font-bold text-white mb-2">Preguntas Frecuentes</h4>
+                <h4 class="font-bold text-white mt-4 mb-2">Transparencia</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2 group cursor-pointer">
+                        <div
+                            class="bg-white text-[#6790FF] group-hover:bg-[#FF4929] group-hover:text-white transition rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="pi pi-exclamation-triangle"></i>
+                        </div>
+                        <span class="text-[#EDEAE4] group-hover:text-white font-medium">Canal de denuncias</span>
+                    </li>
+                </ul>
+
+                <h4 class="font-bold text-white mt-4 mb-2">Legales</h4>
+                <ul class="space-y-2">
+                    <li class="flex items-center space-x-2 group cursor-pointer">
+                        <div
+                            class="bg-white text-[#6790FF] group-hover:bg-[#FF4929] group-hover:text-white transition rounded-full w-8 h-8 flex items-center justify-center">
+                            <i class="pi pi-file"></i>
+                        </div>
+                        <span class="text-[#EDEAE4] group-hover:text-white font-medium">Términos y condiciones</span>
+                    </li>
+                </ul>
+                <!-- Botón libro de reclamaciones -->
+                <div class="mt-6">
+                    <button
+                        class="border border-white text-white px-4 py-2 rounded hover:bg-white hover:text-[#6790FF] transition">
+                        <i class="pi pi-book mr-2"></i> <strong>Libro de reclamaciones</strong>
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
+
+        <!-- Línea inferior -->
+        <div class="bg-[#6790FF] mt-10 text-center py-4 text-sm text-white/80">
+
+            <span class="text-white relative">
+                Zuma
+                <div class="absolute -bottom-2 left-0 w-full h-1 bg-slate-200 rounded-full opacity-30">
+                </div>
+            </span>
+            Capital - Todos los derechos reservados 2025
+        </div>
+    </footer>
 </template>
-
-<script setup>
-import { onMounted, onUnmounted } from 'vue';
-import { showChatbot, hideChatbot } from './chatbotState';
-
-onMounted(() => {
-  console.log('SE ACTIVA');
-    showChatbot();
-});
-onUnmounted(() => {
-    console.log('SE DESACTIVA EL CHATBOT');
-    hideChatbot();
-});
-</script>
