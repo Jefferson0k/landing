@@ -41,5 +41,57 @@
     </head>
     <body class="font-sans antialiased">
         @inertia
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let chatbotElement = null;
+
+            function initializeChatbot() {
+                return new Promise((resolve) => {
+                    chatbotElement = document.createElement('script');
+                    chatbotElement.onload = function() {
+                        window.voiceflow.chat.load({
+                            verify: {
+                                projectID: '66bb0ec5e0206cda3c1a32b6',
+                            },
+                            url: 'https://general-runtime.voiceflow.com',
+                            versionID: 'production',
+                        });
+                        resolve();
+                    };
+                    chatbotElement.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+                    chatbotElement.type = 'text/javascript';
+                    document.body.appendChild(chatbotElement);
+                });
+            }
+
+            function showChatbot() {
+                const voiceflowContainer = document.getElementById('voiceflow-chat');
+                if (voiceflowContainer) {
+                    voiceflowContainer.style.display = 'block';
+                } else if (!chatbotElement) {
+                    initializeChatbot().then(() => {
+                        document.getElementById('voiceflow-chat').style.display = 'block';
+                    });
+                }
+            }
+
+            function hideChatbot() {
+                const voiceflowContainer = document.getElementById('voiceflow-chat');
+                if (voiceflowContainer) {
+                    voiceflowContainer.style.display = 'none';
+                } else {
+                    //console.log('El contenedor del chatbot no se encontró');
+                }
+            }
+            // Escuchar eventos emitidos desde Vue.js
+            window.addEventListener('show-chatbot', function() {
+                showChatbot();
+            });
+            window.addEventListener('hide-chatbot', function() {
+                hideChatbot();
+            });
+        });
+    </script>
     </body>
 </html>

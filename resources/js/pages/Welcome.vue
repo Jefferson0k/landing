@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import FeaturesWidget from '@/components/landing/FeaturesWidget.vue';
 import FooterWidget from '@/components/landing/FooterWidget.vue';
 import HeroWidget from '@/components/landing/HeroWidget.vue';
@@ -7,6 +8,11 @@ import PricingWidget from '@/components/landing/PricingWidget.vue';
 import TopbarWidget from '@/components/landing/TopbarWidget.vue';
 import CustomesWidget from '@/components/landing/CustomesWidget.vue';
 import { Head } from '@inertiajs/vue3';
+import { showChatbot } from './chatbotState';
+
+onMounted(() => {
+    showChatbot();
+});
 
 </script>
 
@@ -18,8 +24,8 @@ import { Head } from '@inertiajs/vue3';
                 <TopbarWidget />
             </div>
             <HeroWidget />
-            <FeaturesWidget />
-            <!--<HighlightsWidget />
+            <!--<FeaturesWidget />
+            <HighlightsWidget />
             <PricingWidget />-->
             <FooterWidget />
         </div>

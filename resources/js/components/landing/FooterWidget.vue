@@ -66,3 +66,17 @@
         </div>
     </div>
 </template>
+
+<script setup>
+import { onMounted, onUnmounted } from 'vue';
+import { showChatbot, hideChatbot } from './chatbotState';
+
+onMounted(() => {
+  console.log('SE ACTIVA');
+    showChatbot();
+});
+onUnmounted(() => {
+    console.log('SE DESACTIVA EL CHATBOT');
+    hideChatbot();
+});
+</script>
