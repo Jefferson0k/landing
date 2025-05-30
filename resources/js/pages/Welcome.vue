@@ -5,6 +5,7 @@ import HeroWidget from '@/components/landing/HeroWidget.vue';
 import HighlightsWidget from '@/components/landing/HighlightsWidget.vue';
 import PricingWidget from '@/components/landing/PricingWidget.vue';
 import TopbarWidget from '@/components/landing/TopbarWidget.vue';
+import CustomesWidget from '@/components/landing/CustomesWidget.vue';
 import { Head } from '@inertiajs/vue3';
 
 </script>
@@ -17,8 +18,8 @@ import { Head } from '@inertiajs/vue3';
                 <TopbarWidget />
             </div>
             <HeroWidget />
-            <!--<FeaturesWidget />
-            <HighlightsWidget />
+            <FeaturesWidget />
+            <!--<HighlightsWidget />
             <PricingWidget />-->
             <FooterWidget />
         </div>
