@@ -15,18 +15,16 @@ function smoothScroll(id) {
 </script>
 
 <template>
-     <div class="fixed top-0 left-0 w-full z-50 py-6 px-6 mx-0 md:px-12 lg:px-20 flex items-center justify-between rounded-b-2xl shadow-lg"
+    <div class="fixed top-0 left-0 w-full z-50 py-6 px-6 mx-0 md:px-12 lg:px-20 flex items-center justify-between rounded-b-2xl shadow-lg"
         style="background: rgb(103, 144, 255);">
+
         <!-- Logo que va a la ruta '/' -->
         <Link href="/" class="flex items-center">
-            <h5>
-                <span class="text-white relative">
-                    Zuma
-                    <div class="absolute -bottom-2 left-0 w-full h-1 bg-white rounded-full opacity-30"></div>
-                </span>
-            </h5>
+        <span class="text-5xl font-bold text-black relative leading-none">
+            ZUMA
+            <div class="absolute -bottom-2 left-0 w-full h-1 bg-black rounded-full opacity-30"></div>
+        </span>
         </Link>
-
         <!-- Botón de menú en móvil -->
         <Button class="lg:!hidden lg:order-3" text severity="secondary" rounded
             v-styleclass="{ selector: '@next', enterFromClass: 'hidden', enterActiveClass: 'animate-scalein', leaveToClass: 'hidden', leaveActiveClass: 'animate-fadeout', hideOnOutsideClick: true }">
@@ -41,7 +39,7 @@ function smoothScroll(id) {
                     <!-- Link a /nosotros con Inertia -->
                     <Link href="/Nosotros"
                         class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl hover:text-gray-200 transition-colors">
-                        <span>Nosotros</span>
+                    <span>Nosotros</span>
                     </Link>
                 </li>
                 <li>
