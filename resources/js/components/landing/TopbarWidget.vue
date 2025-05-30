@@ -15,15 +15,14 @@ function smoothScroll(id) {
 </script>
 
 <template>
-    <div
-        class="bg-white fixed top-0 left-0 w-full z-50 py-6 px-6 mx-0 md:px-12 lg:px-20 flex items-center justify-between rounded-b-2xl shadow-lg">
-        
+     <div class="fixed top-0 left-0 w-full z-50 py-6 px-6 mx-0 md:px-12 lg:px-20 flex items-center justify-between rounded-b-2xl shadow-lg"
+        style="background: rgb(103, 144, 255);">
         <!-- Logo que va a la ruta '/' -->
         <Link href="/" class="flex items-center">
             <h5>
-                <span class="text-blue-600 relative">
+                <span class="text-white relative">
                     Zuma
-                    <div class="absolute -bottom-2 left-0 w-full h-1 bg-blue-600 rounded-full opacity-30"></div>
+                    <div class="absolute -bottom-2 left-0 w-full h-1 bg-white rounded-full opacity-30"></div>
                 </span>
             </h5>
         </Link>
