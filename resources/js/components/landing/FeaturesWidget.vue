@@ -1,69 +1,68 @@
 <template>
-  <div class="relative py-20 px-4 lg:px-16 bg-white overflow-hidden">
-    <div class="max-w-4xl mx-auto text-center mb-12">
-      <h2 class="text-4xl lg:text-5xl font-bold text-[#171717] mb-4">
-        <span class="text-[#6790FF]">Comunidad</span>
-        <span class="text-[#FF4929]"> de confianza</span>
-      </h2>
-      <p class="text-lg lg:text-xl text-[#171717]/80">
-        Colaboramos con empresas líderes en el sector financiero para brindarte soluciones integrales y de vanguardia.
-      </p>
+  <section class="text-center py-16 bg-white">
+    <h2 class="text-4xl font-bold text-[#171717] mb-12">¿Qué hemos logrado?</h2>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 px-4 max-w-6xl mx-auto">
+      <!-- Item 1 -->
+      <div
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }"
+        class="flex items-center gap-6 justify-center px-4 py-6"
+      >
+        <i class="pi pi-dollar text-[96px] text-[#FF4929] drop-shadow-md leading-none"></i>
+        <div class="text-left">
+          <p class="text-3xl font-extrabold text-[#171717] whitespace-nowrap">+ $ 160M</p>
+          <p class="text-lg text-[#171717] font-semibold whitespace-nowrap">Millones prestados</p>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }"
+        class="flex items-center gap-6 justify-center px-4 py-6 border-l-4 border-dotted border-[#EDEAE4]"
+      >
+        <i class="pi pi-users text-[96px] text-[#FF4929] drop-shadow-md leading-none"></i>
+        <div class="text-left">
+          <p class="text-3xl font-extrabold text-[#171717] whitespace-nowrap">+ 1300</p>
+          <p class="text-lg text-[#171717] font-semibold whitespace-nowrap">Clientes atendidos</p>
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }"
+        class="flex items-center gap-6 justify-center px-4 py-6 border-l-4 border-dotted border-[#EDEAE4]"
+      >
+        <i class="pi pi-file text-[96px] text-[#FF4929] drop-shadow-md leading-none"></i>
+        <div class="text-left">
+          <p class="text-3xl font-extrabold text-[#171717] whitespace-nowrap">+ 15K</p>
+          <p class="text-lg text-[#171717] font-semibold whitespace-nowrap">Facturas descontadas</p>
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div
+        v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }"
+        class="flex items-center gap-6 justify-center px-4 py-6 border-l-4 border-dotted border-[#EDEAE4]"
+      >
+        <i class="pi pi-wallet text-[96px] text-[#FF4929] drop-shadow-md leading-none"></i>
+        <div class="text-left">
+          <p class="text-3xl font-extrabold text-[#171717] whitespace-nowrap">+ $ 110</p>
+          <p class="text-lg text-[#171717] font-semibold whitespace-nowrap">Millones en hipotecas</p>
+        </div>
+      </div>
     </div>
 
-    <Carousel
-      :value="images"
-      :numVisible="4"
-      :numScroll="1"
-      :responsiveOptions="responsiveOptions"
-      circular
-      :autoplayInterval="3000"
+    <!-- Registro SBS -->
+    <div
+      v-animateonscroll="{ enterClass: 'animate-enter fade-in-10 slide-in-from-t-20 animate-duration-1000' }"
+      class="mt-16 flex items-center justify-center gap-4"
     >
-      <template #item="slotProps">
-        <div class="m-4 flex justify-center items-center">
-          <div class="bg-white p-6 rounded-xl shadow-lg w-40 h-40 flex items-center justify-center">
-            <img
-              :src="'./customers/' + slotProps.data.image"
-              class="max-w-full max-h-full object-contain"
-              :alt="'Logo de ' + (slotProps.index + 1)"
-            />
-          </div>
-        </div>
-      </template>
-    </Carousel>
-  </div>
+      <p class="text-xl font-extrabold text-[#171717]">Registrados en la:</p>
+      <img src="customers/superintentencia-SBS.svg" alt="SBS Logo" class="h-20" />
+    </div>
+  </section>
 </template>
 
-<script setup>
-import { ref } from "vue";
-import Carousel from "primevue/carousel";
-
-const images = ref([
-  { image: "expirian1-removebg-preview.png" },
-  { image: "garantia-removebg-preview (1).png" },
-  { image: "keynua-removebg-preview.png" },
-  { image: "sunat1-removebg-preview.png" },
-]);
-
-const responsiveOptions = ref([
-  {
-    breakpoint: "1400px",
-    numVisible: 3,
-    numScroll: 1,
-  },
-  {
-    breakpoint: "1199px",
-    numVisible: 3,
-    numScroll: 1,
-  },
-  {
-    breakpoint: "767px",
-    numVisible: 2,
-    numScroll: 1,
-  },
-  {
-    breakpoint: "575px",
-    numVisible: 1,
-    numScroll: 1,
-  },
-]);
+<script setup lang="ts">
+// No necesitas lógica por ahora
 </script>
