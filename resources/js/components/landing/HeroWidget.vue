@@ -1,14 +1,8 @@
 <template>
   <section class="flex flex-col lg:flex-row items-center justify-between gap-10 py-20 px-6 lg:px-20 bg-[#EDEAE4]">
-
     <div class="relative w-full">
-      <!-- Fondo beige fijo con altura controlada -->
-      <div class="absolute top-0 left-0 w-full h-[450px] bg-[#EDEAE4] rounded-3xl z-0"></div>
-
-      <!-- Contenido encima del fondo -->
       <div class="relative z-10 max-w-7xl mx-auto py-20">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <!-- Columna izquierda - Texto -->
           <div class="lg:col-span-7 text-center lg:text-left">
             <div class="mb-12">
               <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
@@ -38,11 +32,11 @@
             </div>
           </div>
         </div>
-        <CustomesWidget />
+                    <CustomesWidget />
+
       </div>
     </div>
   </section>
-
 </template>
 
 <script setup>
