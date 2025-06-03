@@ -6,15 +6,14 @@
           <div class="lg:col-span-7 text-center lg:text-left">
             <div class="mb-12">
               <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
-                Tu
+                Financia tus sueños con
                 <span class="text-blue-600 relative">
-                  Zuma,
+                  Zuma
                   <div class="absolute -bottom-2 left-0 w-full h-1 bg-blue-600 rounded-full opacity-30"></div>
                 </span>
-                nosotros protegemos tu dinero
               </h1>
               <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 mb-6">
-                Financia tus sueños
+            Invierte con los mejores
               </h2>
             </div>
           </div>
