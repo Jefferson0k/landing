@@ -3,7 +3,7 @@ import AppLayout from '@/layout/AppLayout.vue';
 import { Head, usePage } from '@inertiajs/vue3';
 import Password from './settings/Password.vue';
 import Message from 'primevue/message';
-import Button from 'primevue/button';
+import KeynuaWidget from '@/components/KeynuaWidget.vue';
 
 const page = usePage();
 const mustReset = page.props.mustReset;
@@ -57,5 +57,6 @@ function getMotivationalMessage() {
       
       <!-- Botón para realizar alguna acción -->
     </div>
+      <KeynuaWidget />
   </AppLayout>
 </template>
