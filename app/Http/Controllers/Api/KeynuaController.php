@@ -4,102 +4,114 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Models\KeynuaSession;
+use App\Services\KeynuaService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 
 class KeynuaController extends Controller
 {
-    public function createContract(Request $request)
+    public function createContract(Request $request, KeynuaService $keynua)
     {
+        // Validación mínima
         $request->validate([
-            'user_id' => 'required|integer',
-            'name' => 'required|string',
+            'name' => 'required|string|max:255',
             'email' => 'required|email',
-            'document_path' => 'required|string', // Ruta relativa dentro de storage/app
-            'template_id' => 'required|string',
-            'group_name' => 'required|string',
         ]);
 
-        $apiKey = env('KEYNUA_API_KEY');
-        $apiSecret = env('KEYNUA_API_SECRET');
-
-        // Leer y codificar documento
-        $filePath = storage_path('app/' . $request->document_path);
-        if (!file_exists($filePath)) {
-            return response()->json(['error' => 'Archivo no encontrado'], 404);
-        }
-
-        $base64Document = base64_encode(file_get_contents($filePath));
-
-        // Armar el payload
-        $payload = [
-            'title' => 'Contrato generado desde Laravel',
-            'description' => 'Prueba de integración',
-            'reference' => 'ContratoRef-' . uniqid(),
-            'documents' => [
-                [
-                    'name' => basename($filePath),
-                    'base64' => $base64Document,
+        try {
+            $data = [
+                'name' => $request->input('contract_name', 'Contrato de prueba'),
+                'type' => 'SIGNATURE',
+                'users' => [
+                    [
+                        'email' => $request->input('email'),
+                        'name' => $request->input('name'),
+                        'documentType' => $request->input('document_type', 'DNI'),
+                        'documentNumber' => $request->input('document_number', '12345678'),
+                        'phoneNumber' => $request->input('phone_number', '+51999999999')
+                    ]
+                ],
+                'files' => [
+                    [
+                        'name' => 'contrato_123.pdf',
+                        'url' => $request->input('file_url', 'https://www.pj.gov.py/ebook/monografias/nacional/civil/Juan-Carlos-Corina-Los-Contratos-Simulados.pdf')
+                    ]
                 ]
-            ],
-            'templateId' => $request->template_id,
-            'expirationInHours' => 0,
-            'users' => [
-                [
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'groups' => [
-                        $request->group_name,
-                    ],
-                ]
-            ],
-            'flags' => [
-                'chosenNotificationOptions' => ['email'],
-            ]
-        ];
+            ];
 
-        Log::info('🔹 Enviando solicitud a Keynua Contracts:', $payload);
+            // Log para debugging
+            Log::info('Keynua Contract Data:', $data);
 
-        $response = Http::withBasicAuth($apiKey, $apiSecret)
-            ->post('https://api.stg.keynua.com/slate/v1/contracts', $payload);
+            $response = $keynua->createContract($data);
 
-        Log::info('🔹 Respuesta de Keynua Contracts:', [
-            'status' => $response->status(),
-            'body' => $response->body(),
-        ]);
+            if (isset($response['token'])) {
+                // Guardar sesión en base de datos (opcional)
+                try {
+                    KeynuaSession::create([
+                        'token' => $response['token'],
+                        'status' => 'pending',
+                        'user_email' => $request->input('email'),
+                        'contract_name' => $data['name'],
+                        'created_at' => now()
+                    ]);
+                } catch (\Exception $e) {
+                    // Si falla el guardado en BD, continúa igual
+                    Log::warning('No se pudo guardar la sesión en BD:', ['error' => $e->getMessage()]);
+                }
 
-        if ($response->successful()) {
-            $data = $response->json();
+                return response()->json([
+                    'success' => true,
+                    'token' => $response['token'],
+                    'message' => 'Contrato creado exitosamente'
+                ]);
+            }
 
-            KeynuaSession::create([
-                'user_id' => $request->user_id,
-                'token' => $data['token'],
-                'document_name' => basename($filePath),
-                'document_url' => null,
+            return response()->json([
+                'success' => false,
+                'error' => 'No se pudo generar el contrato.',
+                'debug' => $response
+            ], 400);
+
+        } catch (\Exception $e) {
+            Log::error('Error creating Keynua contract:', [
+                'error' => $e->getMessage(),
+                'trace' => $e->getTraceAsString()
             ]);
 
             return response()->json([
-                'message' => 'Contrato creado exitosamente',
-                'token' => $data['token'],
-                'url' => $data['url'] ?? null,
-            ]);
+                'success' => false,
+                'error' => 'Error interno del servidor.',
+                'message' => $e->getMessage()
+            ], 500);
         }
-
-        return response()->json([
-            'error' => 'Error creando contrato Keynua',
-            'details' => $response->json()
-        ], 500);
     }
 
     public function updateResult(Request $request, $token)
     {
-        $session = KeynuaSession::where('token', $token)->firstOrFail();
-        $session->update([
-            'status' => 'completed',
-            'result' => $request->all(),
-        ]);
+        try {
+            $session = KeynuaSession::where('token', $token)->firstOrFail();
+            
+            $session->update([
+                'status' => 'completed',
+                'result' => $request->all(),
+                'completed_at' => now()
+            ]);
 
-        return response()->json(['message' => 'Resultado actualizado']);
+            return response()->json([
+                'success' => true,
+                'message' => 'Resultado actualizado exitosamente'
+            ]);
+
+        } catch (\Exception $e) {
+            Log::error('Error updating Keynua result:', [
+                'token' => $token,
+                'error' => $e->getMessage()
+            ]);
+
+            return response()->json([
+                'success' => false,
+                'error' => 'No se pudo actualizar el resultado.'
+            ], 404);
+        }
     }
 }

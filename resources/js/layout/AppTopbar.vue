@@ -16,7 +16,7 @@ const goToProfile = () => {
 </script>
 
 <template>
-    <div class="layout-topbar" style="background-color: #6790FF;">
+    <div class="layout-topbar">
         <div class="layout-topbar-logo-container">
             <button class="layout-menu-button layout-topbar-action" @click="toggleMenu">
                 <i class="pi pi-bars"></i>

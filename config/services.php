@@ -34,5 +34,10 @@ return [
             'channel' => env('SLACK_BOT_USER_DEFAULT_CHANNEL'),
         ],
     ],
+    'keynua' => [
+        'api_key' => env('KEYNUA_API_KEY'),
+        'api_secret' => env('KEYNUA_API_SECRET'),
+        'base_url' => env('KEYNUA_BASE_URL', 'https://api.stg.keynua.com'),
+    ],
 
 ];

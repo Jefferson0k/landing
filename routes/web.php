@@ -20,7 +20,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
 
     #Modo de prueba
-    Route::post('/keynua/session', [KeynuaController::class, 'createSession']);
+    Route::post('/keynua/contract', [KeynuaController::class, 'createContract']);
     Route::post('/keynua/session/{token}/result', [KeynuaController::class, 'updateResult']);
 
 }); 

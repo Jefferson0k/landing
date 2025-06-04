@@ -18,6 +18,7 @@
                 }
             })();
         </script>
+        <script src="https://sign.stg.keynua.com/widgets/widget.js"></script>
         {{--<script src="https://slate.keynua.com/sdk/v1/slate.js"></script>
         Inline style to set the HTML background color based on our theme in app.css --}}
         <style>
