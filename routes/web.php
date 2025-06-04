@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\KeynuaController;
 use App\Http\Controllers\Web\NosotrosWebController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -11,7 +12,6 @@ Route::get('/', function () {
 Route::get('/Nosotros', [NosotrosWebController::class, 'index'])->name('index.view');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    #PARA QUE CUANDO SE CREA UN USUARIO O MODIFICA SU PASSWORD LO REDIRECCIONE PARA QUE PUEDA ACTUALIZAR
     Route::get('/dashboard', function () {
         $user = Auth::user();
         return Inertia::render('Dashboard', [
@@ -19,8 +19,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         ]);
     })->name('dashboard');
 
-    #VISTAS DEL FRONTEND
-    
+    #Modo de prueba
+    Route::post('/keynua/session', [KeynuaController::class, 'createSession']);
+    Route::post('/keynua/session/{token}/result', [KeynuaController::class, 'updateResult']);
+
 }); 
 
 // Archivos de configuración adicionales

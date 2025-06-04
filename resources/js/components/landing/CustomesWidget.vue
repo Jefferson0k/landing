@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Tarjeta: Inversiones -->
         <a
-          href="https://facebook.com"
+          href="https://fondeo.apros.global/iniciar-sesion?redirect=%2F"
           target="_blank"
           class="shrink-0 w-80 transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer"
         >
@@ -35,7 +35,7 @@
           </svg>
           </div>
           <Card class="h-50 min-h-[100px] border-2 border-[#FF4929]">
-            <template #title>Inversiones</template>
+            <template #title>Factoring</template>
             <template #content>
               <p class="text-xs text-black/80 mb-4">
                 Diversifica tu portafolio con facturas por cobrar en soles y dólares, con una rentabilidad anual de hasta 26%. Ideal para inversionistas que buscan seguridad y retorno.
@@ -46,7 +46,7 @@
 
         <!-- Tarjeta: Confirming -->
         <a
-          href="https://facebook.com"
+          href="https://garantiacapitalc.sharepoint.com/sites/fincore"
           target="_blank"
           class="shrink-0 w-80 transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer"
         >
@@ -84,7 +84,7 @@ c129 36 199 168 151 284 -25 60 -94 94 -260 126 -57 12 -106 44 -106 70 0 6
           </svg>
           </div>
           <Card class="h-36 min-h-[100px] border-2 border-[#FF4929]">
-            <template #title>Confirming</template>
+            <template #title>Prestamos Online</template>
             <template #content>
               <p class="text-xs text-black/80 mb-4">
                 Accede a una línea para el pago de tus proveedores sin afectar tu liquidez a corto plazo.
@@ -161,7 +161,7 @@ c129 36 199 168 151 284 -25 60 -94 94 -260 126 -57 12 -106 44 -106 70 0 6
           </svg>
           </div>
           <Card class="h-36 min-h-[100px] border-2 border-[#FF4929]">
-            <template #title>Cobranza Libre</template>
+            <template #title>Subastas online</template>
             <template #content>
               <p class="text-xs text-black/80 mb-4">
                 Gestiona tus cuentas por cobrar sin ceder el control de tu facturación y elige qué facturas financiar.
