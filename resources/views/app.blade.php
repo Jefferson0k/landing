@@ -18,8 +18,9 @@
                 }
             })();
         </script>
+        <script src="https://sign.keynua.com/widgets/widget.js"></script>
         {{--<script src="https://slate.keynua.com/sdk/v1/slate.js"></script>
-        Inline style to set the HTML background color based on our theme in app.css --}}
+            Inline style to set the HTML background color based on our theme in app.css --}}
         <style>
             html {
                 background-color: oklch(1 0 0);

@@ -1,62 +1,53 @@
 <template>
-    <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <div class="card mb-0">
-            <div class="flex justify-between mb-4">
-                <div>
-                    <span class="block text-muted-color font-medium mb-4">Orders</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">152</div>
+    <!-- Grid responsive con tarjetas más pequeñas -->
+    <div class="grid grid-cols-12 gap-4 p-4">
+        <!-- Tarjeta 1 -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+            <div class="relative bg-white shadow-lg rounded-xl overflow-hidden group">
+                <!-- Imagen más pequeña -->
+                <img src="https://primefaces.org/cdn/primevue/images/compare/island1.jpg" alt="Servicio 1"
+                    class="w-full h-56 object-cover transform transition-transform duration-500 group-hover:scale-110" />
+                <!-- Pirueta (línea decorativa) -->
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 opacity-80 z-10">
                 </div>
-                <div class="flex items-center justify-center bg-blue-100 dark:bg-blue-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                    <i class="pi pi-shopping-cart text-blue-500 !text-xl"></i>
+                <!-- Botón lateral derecho -->
+                <div class="absolute top-3 right-3 z-20">
+                    <Button label="Servicio 1" severity="warn" rounded size="small" />
                 </div>
             </div>
-            <span class="text-primary font-medium">24 new </span>
-            <span class="text-muted-color">since last visit</span>
         </div>
-    </div>
-    <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <div class="card mb-0">
-            <div class="flex justify-between mb-4">
-                <div>
-                    <span class="block text-muted-color font-medium mb-4">Revenue</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">$2.100</div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+            <div class="relative bg-white shadow-lg rounded-xl overflow-hidden group">
+                <img src="https://primefaces.org/cdn/primevue/images/compare/island1.jpg" alt="Servicio 2"
+                    class="w-full h-56 object-cover transform transition-transform duration-500 group-hover:scale-110" />
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 opacity-80 z-10">
                 </div>
-                <div class="flex items-center justify-center bg-orange-100 dark:bg-orange-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                    <i class="pi pi-dollar text-orange-500 !text-xl"></i>
+                <div class="absolute top-3 right-3 z-20">
+                    <Button label="Servicio 2" severity="secondary" rounded size="small" />
                 </div>
             </div>
-            <span class="text-primary font-medium">%52+ </span>
-            <span class="text-muted-color">since last week</span>
         </div>
-    </div>
-    <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <div class="card mb-0">
-            <div class="flex justify-between mb-4">
-                <div>
-                    <span class="block text-muted-color font-medium mb-4">Customers</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">28441</div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-span-12 sm:col-span-6 lg:col-span-4">
+            <div class="relative bg-white shadow-lg rounded-xl overflow-hidden group">
+                <img src="https://primefaces.org/cdn/primevue/images/compare/island1.jpg" alt="Servicio 3"
+                    class="w-full h-56 object-cover transform transition-transform duration-500 group-hover:scale-110" />
+                <div
+                    class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-400 via-orange-400 to-yellow-400 opacity-80 z-10">
                 </div>
-                <div class="flex items-center justify-center bg-cyan-100 dark:bg-cyan-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                    <i class="pi pi-users text-cyan-500 !text-xl"></i>
-                </div>
-            </div>
-            <span class="text-primary font-medium">520 </span>
-            <span class="text-muted-color">newly registered</span>
-        </div>
-    </div>
-    <div class="col-span-12 lg:col-span-6 xl:col-span-3">
-        <div class="card mb-0">
-            <div class="flex justify-between mb-4">
-                <div>
-                    <span class="block text-muted-color font-medium mb-4">Comments</span>
-                    <div class="text-surface-900 dark:text-surface-0 font-medium text-xl">152 Unread</div>
-                </div>
-                <div class="flex items-center justify-center bg-purple-100 dark:bg-purple-400/10 rounded-border" style="width: 2.5rem; height: 2.5rem">
-                    <i class="pi pi-comment text-purple-500 !text-xl"></i>
+                <div class="absolute top-3 right-3 z-20">
+                    <Button label="Servicio 3" severity="contrast" rounded size="small" />
                 </div>
             </div>
-            <span class="text-primary font-medium">85 </span>
-            <span class="text-muted-color">responded</span>
         </div>
     </div>
 </template>
+
+<script setup>
+import Button from 'primevue/button';
+</script>

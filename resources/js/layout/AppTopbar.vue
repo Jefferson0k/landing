@@ -16,7 +16,7 @@ const goToProfile = () => {
 </script>
 
 <template>
-    <div class="layout-topbar" style="background-color: #6790FF;">
+    <div class="layout-topbar">
         <div class="layout-topbar-logo-container">
             <button class="layout-menu-button layout-topbar-action" @click="toggleMenu">
                 <i class="pi pi-bars"></i>
@@ -34,12 +34,10 @@ const goToProfile = () => {
                 <button type="button" class="layout-topbar-action" @click="toggleDarkMode">
                     <i :class="['pi', { 'pi-moon': isDarkTheme, 'pi-sun': !isDarkTheme }]"></i>
                 </button>
-                <div class="relative">
+                <div class="relative hidden">
                     <button
                         v-styleclass="{ selector: '@next', enterFromClass: 'hidden', enterActiveClass: 'animate-scalein', leaveToClass: 'hidden', leaveActiveClass: 'animate-fadeout', hideOnOutsideClick: true }"
-                        type="button"
-                        class="layout-topbar-action layout-topbar-action-highlight"
-                    >
+                        type="button" class="layout-topbar-action layout-topbar-action-highlight">
                         <i class="pi pi-palette"></i>
                     </button>
                     <AppConfigurator />
@@ -70,21 +68,5 @@ const goToProfile = () => {
 </template>
 
 <style scoped>
-.zuma-hover {
-    transition: all 0.3s ease;
-    border-radius: 50%;
-    padding: 8px 12px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
 
-.zuma-hover:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.zuma-hover:hover span {
-    color: white !important;
-}
 </style>
