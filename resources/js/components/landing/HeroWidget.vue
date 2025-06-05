@@ -13,7 +13,7 @@
                 </span>
               </h1>
               <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 mb-6">
-            Invierte con los mejores
+                Invierte con los mejores
               </h2>
             </div>
           </div>
@@ -31,7 +31,7 @@
             </div>
           </div>
         </div>
-                    <CustomesWidget />
+        <CustomesWidget />
 
       </div>
     </div>

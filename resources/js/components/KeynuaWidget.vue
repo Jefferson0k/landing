@@ -7,7 +7,10 @@
 <script>
 export default {
   props: {
-    token: String
+    token: {
+      type: String,
+      required: true
+    }
   },
   mounted() {
     if (window.KeynuaWidget) {

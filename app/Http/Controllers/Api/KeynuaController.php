@@ -1,117 +1,81 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-
 use App\Http\Controllers\Controller;
-use App\Models\KeynuaSession;
-use App\Services\KeynuaService;
+
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
 
 class KeynuaController extends Controller
 {
-    public function createContract(Request $request, KeynuaService $keynua)
+    private $apiUrl = 'https://api.stg.keynua.com';
+    private $usuario;
+    private $clave;
+
+    public function __construct()
     {
-        // Validación mínima
+        $this->usuario = env('KEYNUA_USER');
+        $this->clave = env('KEYNUA_PASS');
+    }
+
+    public function crearContrato(Request $request)
+    {
         $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email',
+            'name' => 'required|string',
+            'email' => 'required|email'
         ]);
 
+        // 1. Crear contrato
+        $contratoPayload = [
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            // Descomenta esto si usas una plantilla:
+            // 'templateId' => 'TU_TEMPLATE_ID',
+        ];
+
         try {
-            $data = [
-                'name' => $request->input('contract_name', 'Contrato de prueba'),
-                'type' => 'SIGNATURE',
-                'users' => [
-                    [
-                        'email' => $request->input('email'),
-                        'name' => $request->input('name'),
-                        'documentType' => $request->input('document_type', 'DNI'),
-                        'documentNumber' => $request->input('document_number', '12345678'),
-                        'phoneNumber' => $request->input('phone_number', '+51999999999')
-                    ]
-                ],
-                'files' => [
-                    [
-                        'name' => 'contrato_123.pdf',
-                        'url' => $request->input('file_url', 'https://www.pj.gov.py/ebook/monografias/nacional/civil/Juan-Carlos-Corina-Los-Contratos-Simulados.pdf')
-                    ]
-                ]
+            $response = Http::withBasicAuth($this->usuario, $this->clave)
+                ->post("{$this->apiUrl}/slate/v1/contracts", $contratoPayload);
+
+            if (!$response->successful()) {
+                return response()->json([
+                    'success' => false,
+                    'error' => 'No se pudo generar el contrato.',
+                    'debug' => $response->json(),
+                ], $response->status());
+            }
+
+            $contractId = $response->json('contractId');
+
+            // 2. Crear sesión para el contrato
+            $sessionPayload = [
+                'contractId' => $contractId,
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
             ];
 
-            // Log para debugging
-            Log::info('Keynua Contract Data:', $data);
+            $sessionResponse = Http::withBasicAuth($this->usuario, $this->clave)
+                ->post("{$this->apiUrl}/slate/v1/session", $sessionPayload);
 
-            $response = $keynua->createContract($data);
-
-            if (isset($response['token'])) {
-                // Guardar sesión en base de datos (opcional)
-                try {
-                    KeynuaSession::create([
-                        'token' => $response['token'],
-                        'status' => 'pending',
-                        'user_email' => $request->input('email'),
-                        'contract_name' => $data['name'],
-                        'created_at' => now()
-                    ]);
-                } catch (\Exception $e) {
-                    // Si falla el guardado en BD, continúa igual
-                    Log::warning('No se pudo guardar la sesión en BD:', ['error' => $e->getMessage()]);
-                }
-
+            if (!$sessionResponse->successful()) {
                 return response()->json([
-                    'success' => true,
-                    'token' => $response['token'],
-                    'message' => 'Contrato creado exitosamente'
-                ]);
+                    'success' => false,
+                    'error' => 'No se pudo generar la sesión.',
+                    'debug' => $sessionResponse->json(),
+                ], $sessionResponse->status());
             }
 
             return response()->json([
-                'success' => false,
-                'error' => 'No se pudo generar el contrato.',
-                'debug' => $response
-            ], 400);
-
-        } catch (\Exception $e) {
-            Log::error('Error creating Keynua contract:', [
-                'error' => $e->getMessage(),
-                'trace' => $e->getTraceAsString()
-            ]);
-
-            return response()->json([
-                'success' => false,
-                'error' => 'Error interno del servidor.',
-                'message' => $e->getMessage()
-            ], 500);
-        }
-    }
-
-    public function updateResult(Request $request, $token)
-    {
-        try {
-            $session = KeynuaSession::where('token', $token)->firstOrFail();
-            
-            $session->update([
-                'status' => 'completed',
-                'result' => $request->all(),
-                'completed_at' => now()
-            ]);
-
-            return response()->json([
                 'success' => true,
-                'message' => 'Resultado actualizado exitosamente'
+                'token' => $sessionResponse->json('token')
             ]);
 
         } catch (\Exception $e) {
-            Log::error('Error updating Keynua result:', [
-                'token' => $token,
-                'error' => $e->getMessage()
-            ]);
-
             return response()->json([
                 'success' => false,
-                'error' => 'No se pudo actualizar el resultado.'
-            ], 404);
+                'error' => 'Excepción al conectar con Keynua.',
+                'debug' => $e->getMessage()
+            ], 500);
         }
     }
 }
