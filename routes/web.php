@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\KeynuaController;
+use App\Http\Controllers\Web\BuscarOportunidadesWebControler;
 use App\Http\Controllers\Web\ClientesWebController;
 use App\Http\Controllers\Web\NosotrosWebController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             'mustReset' => $user->restablecimiento == 0,
         ]);
     })->name('dashboard');
+    Route::get('/Buscar/Oportunidades', [BuscarOportunidadesWebControler::class, 'index'])->name('index.view');
     Route::post('/keynua/contract', [KeynuaController::class, 'crearContrato']);
     Route::post('/keynua/session/{token}/result', [KeynuaController::class, 'updateResult']);
 }); 
