@@ -21,16 +21,20 @@
                     </div>
                 </div>
             </template>
+
             <template v-else>
                 <div class="mb-6">
                     <h1 class="text-2xl font-semibold mb-1">Configuración</h1>
                     <p class="py-4">Administra tu perfil y la configuración de tu cuenta</p>
                 </div>
-                <Tabs value="0">
+
+                <Tabs v-model="selectedTab">
                     <TabList>
                         <Tab value="0">Perfil</Tab>
                         <Tab value="1">Contraseña</Tab>
+                        <Tab value="2">Keynua</Tab>
                     </TabList>
+
                     <TabPanels>
                         <TabPanel value="0">
                             <perfil :mustVerifyEmail="mustVerifyEmail" :status="status" />
@@ -38,15 +42,20 @@
                         <TabPanel value="1">
                             <PasswordPerdil />
                         </TabPanel>
+                        <TabPanel value="2">
+                            <keynua />
+                        </TabPanel>
                     </TabPanels>
                 </Tabs>
             </template>
         </div>
     </AppLayout>
 </template>
+
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Head, usePage } from '@inertiajs/vue3';
+
 import AppLayout from '@/layout/AppLayout.vue';
 import Skeleton from 'primevue/skeleton';
 import Tabs from 'primevue/tabs';
@@ -54,13 +63,15 @@ import TabList from 'primevue/tablist';
 import Tab from 'primevue/tab';
 import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
+
 import PasswordPerdil from './PasswordPerdil.vue';
 import perfil from './perfil.vue';
+import keynua from './keynua.vue';
 
 const isLoading = ref(true);
-const page = usePage();
+const selectedTab = ref("0");
 
-// Obtener las propiedades necesarias para el componente perfil
+const page = usePage();
 const mustVerifyEmail = page.props.mustVerifyEmail || false;
 const status = page.props.status || null;
 
@@ -70,4 +81,5 @@ onMounted(() => {
     }, 1000);
 });
 </script>
+
 <style scoped></style>
