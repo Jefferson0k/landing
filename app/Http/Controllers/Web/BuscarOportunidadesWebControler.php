@@ -6,6 +6,6 @@ use Inertia\Inertia;
 use Inertia\Response;
 class BuscarOportunidadesWebControler extends Controller{
     public function index(): Response{
-        return Inertia::render('Panel/BuscarOportunidades/indexBuscarOportunidades');
+        return Inertia::render('Panel/BuscarOPortunidades/indexBuscarOPortunidades');
     }
 }
