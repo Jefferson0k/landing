@@ -26,7 +26,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
     Route::get('/consultar-ruc/{ruc?}', [ConsultasRucController::class, 'consultar']);
     Route::get('/Buscar/Oportunidades', [BuscarOportunidadesWebControler::class, 'index'])->name('index.view');
-    Route::post('/keynua/contract', [KeynuaController::class, 'crearContrato']);
+    Route::post('/crear-contrato-keynua', [KeynuaController::class, 'crearContrato']);
     Route::post('/keynua/session/{token}/result', [KeynuaController::class, 'updateResult']);
 }); 
 
