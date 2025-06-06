@@ -66,17 +66,8 @@ const crearContrato = async () => {
     console.log('🔑 API Key:', API_KEY);
     console.log('🎫 Token (primeros 50 chars):', API_TOKEN.substring(0, 50) + '...');
     
-    const response = await axios.post(
-      'https://api.stg.keynua.com/api/contracts',
-      payload,
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${API_TOKEN}`,
-          'x-api-key': API_KEY
-        }
-      }
-    );
+    const response = await axios.post('/crear-contrato-keynua', payload);
+
     
     console.log('✅ Respuesta completa de la API:', response.data);
     console.log('📊 Status de respuesta:', response.status);
