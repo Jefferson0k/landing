@@ -4,7 +4,7 @@ import { usePage } from '@inertiajs/vue3';
 import AppMenuItem from './AppMenuItem.vue';
 import Avatar from 'primevue/avatar';
 import Button from 'primevue/button';
-import Card from 'primevue/card';
+import OverlayBadge from 'primevue/overlaybadge';
 
 const page = usePage();
 
@@ -36,8 +36,12 @@ const model = computed(() => [
     <div class="flex flex-col h-full p-4">
         <!-- Perfil del usuario -->
         <div class="flex flex-col items-center justify-center text-center mb-8 mt-4">
-            <Avatar image="https://primefaces.org/cdn/primevue/images/avatar/amyelsner.png" size="xlarge" shape="circle"
-                class="mb-6 !w-48 !h-48 border-4 border-white shadow-lg" />
+            <OverlayBadge value="4" severity="danger" class="inline-flex">
+
+            <Avatar image="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRxXXkXxmSjKzi69Qjr2aBUtLK6IeZ5XfrSZe8zEyUkxYSt_C-9" size="xlarge" shape="circle"
+                class="mb-6 !w-48 !h-48 shadow-lg" />
+                </OverlayBadge>
+
             <div class="text-xl font-bold mb-3">{{ page.props.auth.user.name }}</div>
             <div class="text-lg font-semibold">1234567890</div>
         </div>
@@ -48,7 +52,6 @@ const model = computed(() => [
                 <app-menu-item :item="item" :index="i" />
             </template>
         </ul>
-
         <!-- Card + botones + imagen -->
         <div class="mt-auto w-full flex flex-col items-center gap-6">
             <!-- Card personalizado sin el componente Card -->

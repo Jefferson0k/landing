@@ -12,12 +12,11 @@ import Button from "primevue/button";
 const page = usePage();
 const mustReset = page.props.mustReset;
 
-// Obtener el usuario autenticado
 const user = page.props.auth.user;
 
 const home = ref({
   icon: 'pi pi-home',
-  route: '/introduction'
+  route: '/dashboard'
 });
 
 const items = ref([
@@ -26,7 +25,7 @@ const items = ref([
 ]);
 
 function verOportunidades() {
-  router.visit('/oportunidades'); // Redirige a la ruta /oportunidades con Inertia
+  router.visit('/Buscar/Oportunidades');
 }
 </script>
 
