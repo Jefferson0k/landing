@@ -3,6 +3,7 @@ import { Link } from '@inertiajs/vue3';
 import { useLayout } from '@/layout/composables/layout';
 import AppConfigurator from './AppConfigurator.vue';
 import { router } from '@inertiajs/vue3';
+import OverlayBadge from 'primevue/overlaybadge';
 
 const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
 
@@ -42,6 +43,13 @@ const goToProfile = () => {
                     </button>
                     <AppConfigurator />
                 </div>
+                <div class="relative">
+    <button type="button" class="layout-topbar-action">
+      <OverlayBadge :value="2">
+        <i class="pi pi-bell" style="font-size: 1.25rem" />
+      </OverlayBadge>
+    </button>
+  </div>
             </div>
 
             <button

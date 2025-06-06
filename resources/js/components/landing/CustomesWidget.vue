@@ -46,7 +46,7 @@
 
         <!-- Tarjeta: Confirming -->
         <a
-          href="https://garantiacapitalc.sharepoint.com/sites/fincore"
+          href="https://prestamos-main-yjr7cj.laravel.cloud/dashboard"
           target="_blank"
           class="shrink-0 w-80 transition-all duration-300 transform hover:scale-105 hover:shadow-lg cursor-pointer"
         >
