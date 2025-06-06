@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\ConsultasRucController;
 use App\Http\Controllers\Api\KeynuaController;
 use App\Http\Controllers\Web\BuscarOportunidadesWebControler;
 use App\Http\Controllers\Web\ClientesWebController;
@@ -23,6 +24,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
             'mustReset' => $user->restablecimiento == 0,
         ]);
     })->name('dashboard');
+    Route::get('/consultar-ruc/{ruc?}', [ConsultasRucController::class, 'consultar']);
     Route::get('/Buscar/Oportunidades', [BuscarOportunidadesWebControler::class, 'index'])->name('index.view');
     Route::post('/crear-contrato-keynua', [KeynuaController::class, 'crearContrato']);
     Route::post('/keynua/session/{token}/result', [KeynuaController::class, 'updateResult']);

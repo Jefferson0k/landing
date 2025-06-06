@@ -66,7 +66,11 @@ const crearContrato = async () => {
     console.log('🔑 API Key:', API_KEY);
     console.log('🎫 Token (primeros 50 chars):', API_TOKEN.substring(0, 50) + '...');
     
-    const response = await axios.post('/crear-contrato-keynua', payload);
+axios.post('/crear-contrato-keynua', payload, {
+  headers: {
+    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+  }
+});
 
     
     console.log('✅ Respuesta completa de la API:', response.data);
