@@ -1,75 +1,68 @@
 <template>
-  <section class="flex flex-col lg:flex-row items-center justify-between gap-10 py-20 px-6 lg:px-20 bg-[#EDEAE4]">
-    <div class="relative w-full">
-      <div class="relative z-10 max-w-7xl mx-auto py-20">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div class="lg:col-span-7 text-center lg:text-left">
-            <div class="mb-12">
-              <h1 class="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
-                Financia tus sueños con
-                <span class="text-blue-600 relative">
-                  Zuma
-                  <div class="absolute -bottom-2 left-0 w-full h-1 bg-blue-600 rounded-full opacity-30"></div>
-                </span>
-              </h1>
-              <h2 class="text-2xl md:text-3xl lg:text-4xl font-semibold text-gray-800 mb-6">
-                Invierte con los mejores
-              </h2>
-            </div>
-          </div>
-          <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
-            <div class="relative w-full max-w-xs mt-[-40px]">
-              <div
-                class="relative bg-[#FF4929] rounded-3xl shadow-2xl p-8 transform rotate-[6deg] hover:rotate-0 transition-all duration-500 hover:shadow-3xl">
-                <div class="flex justify-between items-center mb-4">
-                  <h1 class="text-base font-semibold text-gray-800">Invierte de forma efectiva y segura</h1>
-                </div>
-                <div class="space-y-4">
-                  <img src="customers/SINFONDO.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <CustomesWidget />
+  <div id="hero" class="flex flex-col items-center px-6 lg:px-20 py-12 space-y-12" style="background-color: #EDEAE4;">
 
+    <!-- HERO PRINCIPAL -->
+    <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-7xl">
+
+      <!-- Texto -->
+      <div class="md:w-1/2 mb-10 md:mb-0">
+        <h1 class="text-5xl md:text-6xl font-light text-black leading-tight">
+          Financia tus sueños<br />
+          con <span class="font-bold text-black">zuma</span>
+        </h1>
+
+        <!-- Lista separada visualmente -->
+        <ul class="mt-10 space-y-3 text-xl text-black">
+          <li class="flex items-center gap-3">
+            <i class="pi pi-check text-xl text-black"></i>
+            <span>Lorem ipsum dolor sit</span>
+          </li>
+          <li class="flex items-center gap-3">
+            <i class="pi pi-check text-xl text-black"></i>
+            <span>Lorem ipsum dolor sit</span>
+          </li>
+        </ul>
+      </div>
+      <div class="md:w-1/2 flex justify-center md:justify-end">
+        <div class="bg-white rounded-full p-6 shadow-lg overflow-hidden">
+          <img src="/imagenes/landing/SINFONDO.png" alt="Hero Image" class=" md:w-96 " />
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- LÍNEA DIVISORIA -->
+    <div class="w-full border-t border-gray-300"></div>
+
+    <!-- BOTONES DE INVERSIÓN -->
+    <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+
+      <!-- Botón 1 -->
+      <div
+        class="w-72 h-24 bg-white hover:bg-[#6790FF] hover:text-white transition-colors duration-300 rounded-full flex items-center gap-4 shadow-md cursor-pointer px-6">
+        <img src="/imagenes/landing/Recurso 5.svg" alt="Factoring" class="w-14 h-14" />
+        <span class="text-black hover:text-white text-sm font-medium leading-tight">
+          Invierte en<br />factoring
+        </span>
+      </div>
+
+      <!-- Botón 2 -->
+      <div
+        class="w-72 h-24 bg-white hover:bg-[#6790FF] hover:text-white transition-colors duration-300 rounded-full flex items-center gap-4 shadow-md cursor-pointer px-6">
+        <img src="/imagenes/landing/Recurso 2.svg" alt="Hipotecarios" class="w-14 h-14" />
+        <span class="text-black hover:text-white text-sm font-medium leading-tight">
+          Invierte en<br />Préstamos<br />Hipotecarios
+        </span>
+      </div>
+
+      <!-- Botón 3 -->
+      <div
+        class="w-72 h-24 bg-white hover:bg-[#6790FF] hover:text-white transition-colors duration-300 rounded-full flex items-center gap-4 shadow-md cursor-pointer px-6">
+        <img src="/imagenes/landing/Recurso 4.svg" alt="Tasas Fijas" class="w-14 h-14" />
+        <span class="text-black hover:text-white text-sm font-medium leading-tight">
+          Invierte en<br />Tasas Fijas
+        </span>
+      </div>
+
+    </div>
+  </div>
 </template>
-
-<script setup>
-import CustomesWidget from './CustomesWidget.vue'
-</script>
-
-<style scoped>
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.shadow-3xl {
-  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
-}
-
-.group:hover .group-hover\:scale-110 {
-  transform: scale(1.1);
-}
-
-@media (max-width: 1024px) {
-  .transform.rotate-3 {
-    transform: rotate(0deg);
-  }
-}
-</style>
