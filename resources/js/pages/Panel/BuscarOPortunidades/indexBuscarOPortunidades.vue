@@ -12,7 +12,7 @@ const home = ref({
 });
 
 const items = ref([
-    { label: 'Factoring', disabled: true },
+    { label: 'Tasas fijas', disabled: true },
     { label: 'Mi perfil del inversionista', icon: 'pi pi-bolt', route: '/dashboard3' },
 ]);
 

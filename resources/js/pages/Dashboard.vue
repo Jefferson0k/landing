@@ -20,7 +20,7 @@ const home = ref({
 });
 
 const items = ref([
-  { label: 'Factoring', disabled: true },
+  { label: 'Tasas fijas', disabled: true },
   { label: 'Mi perfil del inversionista', icon: 'pi pi-bolt', route: '/dashboard3' },
 ]);
 
@@ -59,7 +59,7 @@ function verOportunidades() {
       <br>
       <div class="card"
         style="background-color: #6790FF; color: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem;">
-        <h2>Bienvenido {{ user.name }} a tu perfil del inversionista</h2>
+        <h2>Bienvenido [ {{ user.name }} ]a tu perfil del inversionista</h2>
       </div>
       <StatsWidget />
     </div>
