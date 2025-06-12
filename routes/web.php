@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\Api\ConsultasRucController;
+use App\Http\Controllers\Api\IdentificacionController;
 use App\Http\Controllers\Api\KeynuaController;
+use App\Http\Controllers\Api\KeynuaSignatureController;
 use App\Http\Controllers\Web\BuscarOportunidadesWebControler;
 use App\Http\Controllers\Web\ClientesWebController;
 use App\Http\Controllers\Web\NosotrosWebController;
@@ -26,8 +28,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
     Route::get('/consultar-ruc/{ruc?}', [ConsultasRucController::class, 'consultar']);
     Route::get('/Buscar/Oportunidades', [BuscarOportunidadesWebControler::class, 'index'])->name('index.view');
-    Route::post('/crear-contrato-keynua', [KeynuaController::class, 'crearContrato']);
-    Route::post('/keynua/session/{token}/result', [KeynuaController::class, 'updateResult']);
+    
+    Route::get('/identificaciones', [IdentificacionController::class, 'index'])->name('identificaciones.index');
+    Route::post('/identificaciones/crear', [IdentificacionController::class, 'crear'])->name('identificaciones.crear');
 }); 
 
 // Archivos de configuración adicionales

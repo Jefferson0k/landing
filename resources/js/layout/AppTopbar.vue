@@ -23,11 +23,9 @@ const goToProfile = () => {
                 <i class="pi pi-bars"></i>
             </button>
             <Link href="/dashboard" class="layout-topbar-logo zuma-hover">
-                <span class="relative">
-                Zuma
-                <div class="absolute -bottom-2 left-0 w-full h-1 bg-blue-600 rounded-full opacity-30"></div>
-                </span>                        
+            <strong>zuma</strong>
             </Link>
+
         </div>
 
         <div class="layout-topbar-actions">
@@ -44,18 +42,16 @@ const goToProfile = () => {
                     <AppConfigurator />
                 </div>
                 <div class="relative">
-    <button type="button" class="layout-topbar-action">
-      <OverlayBadge :value="2">
-        <i class="pi pi-bell" style="font-size: 1.25rem" />
-      </OverlayBadge>
-    </button>
-  </div>
+                    <button type="button" class="layout-topbar-action">
+                        <OverlayBadge :value="2">
+                            <i class="pi pi-bell" style="font-size: 1.25rem" />
+                        </OverlayBadge>
+                    </button>
+                </div>
             </div>
 
-            <button
-                class="layout-topbar-menu-button layout-topbar-action"
-                v-styleclass="{ selector: '@next', enterFromClass: 'hidden', enterActiveClass: 'animate-scalein', leaveToClass: 'hidden', leaveActiveClass: 'animate-fadeout', hideOnOutsideClick: true }"
-            >
+            <button class="layout-topbar-menu-button layout-topbar-action"
+                v-styleclass="{ selector: '@next', enterFromClass: 'hidden', enterActiveClass: 'animate-scalein', leaveToClass: 'hidden', leaveActiveClass: 'animate-fadeout', hideOnOutsideClick: true }">
                 <i class="pi pi-ellipsis-v"></i>
             </button>
 
@@ -75,6 +71,4 @@ const goToProfile = () => {
     </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
