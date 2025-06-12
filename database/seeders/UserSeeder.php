@@ -23,19 +23,19 @@ class UserSeeder extends Seeder{
             'apellidos' => 'Covenas Roman',
             'nacimiento' => '2003-03-11',
             'email' => 'jefersoncovenas7@gmail.com',
-            'username' => 'JCOVENASRO11',
+            'username' => 'Jeferson',
             'password' => Hash::make('12345678'),
             'status' => true,
             'restablecimiento' => 0,
         ]);
 
         $admin_2 = User::create([
-            'name' => 'Luis Fernando',
+            'name' => 'Lucia',
             'dni' => '07777777',
-            'apellidos' => 'Atocha Gonzales',
+            'apellidos' => 'S/n',
             'nacimiento' => '2003-03-11',
             'email' => 'luisatocha@gmail.com',
-            'username' => 'LATOCHA05',
+            'username' => 'lucia',
             'password' => Hash::make('12345678'),
             'status' => true,
             'restablecimiento' => 0,
