@@ -7,6 +7,9 @@ import { createApp, h } from 'vue';
 import { ZiggyVue } from 'ziggy-js';
 import "primeicons/primeicons.css";
 import { setupPrimeVue } from './plugins/primevue';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 // Extend ImportMeta interface for Vite...
 declare module 'vite/client' {
     interface ImportMetaEnv {
@@ -24,17 +27,17 @@ const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
-    resolve: (name) => resolvePageComponent(`./pages/${name}.vue`, import.meta.glob<DefineComponent>('./pages/**/*.vue')),
+    resolve: (name) =>
+        resolvePageComponent(`./pages/${name}.vue`, import.meta.glob<DefineComponent>('./pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
-        createApp({ render: () => h(App, props) })
-            const vueApp = createApp({ render: () => h(App, props) });
-            vueApp.use(plugin)
-            vueApp.use(ZiggyVue)
-            setupPrimeVue(vueApp);
-            vueApp.mount(el);
+        const vueApp = createApp({ render: () => h(App, props) });
+        vueApp.use(plugin);
+        vueApp.use(ZiggyVue);
+        setupPrimeVue(vueApp);
+        AOS.init();
+        vueApp.mount(el);
     },
     progress: {
         color: '#4B5563',
     },
 });
-
