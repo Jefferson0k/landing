@@ -3,7 +3,7 @@
         <DataTable ref="dt" :value="facturas" dataKey="id" :paginator="true" :rows="10" :filters="filters"
             paginatorTemplate="FirstPageLink PrevPageLink PageLinks NextPageLink LastPageLink CurrentPageReport RowsPerPageDropdown"
             :rowsPerPageOptions="[5, 10, 25]"
-            currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} facturas">
+            currentPageReportTemplate="Mostrando {first} a {last} de {totalRecords} facturas" class="p-datatable-sm">
 
 
             <template #header>
@@ -75,7 +75,7 @@
                     <span class="font-semibold">{{ slotProps.data.monto }}</span>
                 </template>
                 </Column>
-                <Column field="porcentaje" header="% a financiar" sortable style="min-width: 8rem">
+                <Column field="porcentaje" header="% a financiar" sortable style="min-width: 10rem">
                     <template #body="slotProps">
                         <div class="flex flex-column gap-2">
                             <span class="text-orange-500 font-bold">{{ slotProps.data.porcentaje }}</span>

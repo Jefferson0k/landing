@@ -35,13 +35,15 @@
     <!-- BOTONES DE INVERSIÓN -->
     <div class="flex flex-col md:flex-row items-center justify-center gap-6" data-aos="fade-up" data-aos-delay="800">
       <!-- Botón 1 -->
-      <div
-        class="w-72 h-24 bg-white hover:bg-[#6790FF] hover:text-white transition-all duration-300 rounded-full flex items-center gap-4 shadow-md cursor-pointer px-6 hover:scale-105">
-        <img src="/imagenes/landing/Recurso 5.svg" alt="Factoring" class="w-14 h-14" />
-        <span class="text-black hover:text-white text-sm font-medium leading-tight">
-          Invierte en<br />factoring
-        </span>
-      </div>
+    <a href="https://fondeo.apros.global/iniciar-sesion?redirect=%2F" target="_blank" rel="noopener noreferrer">
+        <div
+          class="w-72 h-24 bg-white hover:bg-[#6790FF] hover:text-white transition-all duration-300 rounded-full flex items-center gap-4 shadow-md cursor-pointer px-6 hover:scale-105">
+          <img src="/imagenes/landing/Recurso 5.svg" alt="Factoring" class="w-14 h-14" />
+          <span class="text-black hover:text-white text-sm font-medium leading-tight">
+            Invierte en<br />factoring
+          </span>
+        </div>
+      </a>
 
       <!-- Botón 2 -->
       <a href="https://hipotecas-main-ctqfss.laravel.cloud/login" target="_blank" rel="noopener noreferrer"

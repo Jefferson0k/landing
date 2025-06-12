@@ -19,12 +19,19 @@ const goToProfile = () => {
 <template>
     <div class="layout-topbar">
         <div class="layout-topbar-logo-container">
-            <button class="layout-menu-button layout-topbar-action" @click="toggleMenu">
-                <i class="pi pi-bars"></i>
-            </button>
             <Link href="/dashboard" class="layout-topbar-logo zuma-hover">
-            <strong>zuma</strong>
+            <strong>
+                <h1>zuma</h1>
+            </strong>
             </Link>
+            <button class="layout-menu-button layout-topbar-action ml-32" @click="toggleMenu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 26 22" fill="none">
+        <rect x="1.51078" y="1.5267" width="22.7718" height="19.1942" rx="5.31803" transform="rotate(-0.620767 1.51078 1.5267)" stroke="#101010" stroke-width="2"/>
+        <line x1="11.0977" y1="20.5049" x2="11.0977" y2="1.35933" stroke="#101010" stroke-width="2"/>
+        <path d="M5.39844 6.86353H7.79163" stroke="#101010" stroke-width="2" stroke-linecap="round"/>
+        <path d="M5.39844 11.1711H7.79163" stroke="#101010" stroke-width="2" stroke-linecap="round"/>
+    </svg>
+</button>
 
         </div>
 

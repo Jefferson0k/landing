@@ -6,6 +6,7 @@ import HeroWidget from '@/components/landing/HeroWidget.vue';
 import HighlightsWidget from '@/components/landing/HighlightsWidget.vue';
 import TopbarWidget from '@/components/landing/TopbarWidget.vue';
 import { showChatbot } from './chatbotState';
+import { Head } from '@inertiajs/vue3';
 
 onMounted(() => {
     showChatbot();
@@ -13,6 +14,7 @@ onMounted(() => {
 </script>
 
 <template>
+      <Head title="Landing" />
     <div class="bg-surface-0 dark:bg-surface-900">
         <div id="home" class="landing-wrapper overflow-hidden" style="background-color: #6790FF;">
             <div class="py-6 px-6 mx-0 md:mx-12 lg:mx-20 lg:px-20 flex items-center justify-between relative lg:static">
