@@ -12,7 +12,7 @@ const home = ref({
 });
 
 const items = ref([
-    { label: 'Tasas fijas', disabled: true },
+    { label: 'Prestamos hipotecarios', disabled: true },
     { label: 'Mi perfil del inversionista', icon: 'pi pi-bolt', route: '/dashboard3' },
 ]);
 

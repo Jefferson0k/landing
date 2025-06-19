@@ -7,6 +7,7 @@ use App\Http\Controllers\Api\KeynuaSignatureController;
 use App\Http\Controllers\Web\BuscarOportunidadesWebControler;
 use App\Http\Controllers\Web\ClientesWebController;
 use App\Http\Controllers\Web\NosotrosWebController;
+use App\Http\Controllers\Web\SubastaOnlineWebControler;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     })->name('dashboard');
     Route::get('/consultar-ruc/{ruc?}', [ConsultasRucController::class, 'consultar']);
     Route::get('/Buscar/Oportunidades', [BuscarOportunidadesWebControler::class, 'index'])->name('index.view');
-    
+    Route::get('/Subasta/Online', [SubastaOnlineWebControler::class, 'index'])->name('index.view');
+
     Route::get('/identificaciones', [IdentificacionController::class, 'index'])->name('identificaciones.index');
     Route::post('/identificaciones/crear', [IdentificacionController::class, 'crear'])->name('identificaciones.crear');
 }); 

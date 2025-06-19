@@ -1,89 +1,49 @@
 version: '3.8'
 
 services:
-  app:
+  cliente_app:
     build:
       context: ./docker/php
-    container_name: laravel_app
+    container_name: cliente_app
     restart: always
     working_dir: /var/www
     volumes:
       - .:/var/www
     depends_on:
-      mysql:
-        condition: service_healthy
+      - laravel_mysql
     networks:
       - laravel_red_2025
 
-  nginx:
+  cliente_nginx:
     image: nginx:latest
-    container_name: laravel_nginx
+    container_name: cliente_nginx
     restart: always
     ports:
-      - "80:80"
+      - "81:80"
     volumes:
       - .:/var/www
       - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
     depends_on:
-      - app
+      - cliente_app
     networks:
       - laravel_red_2025
 
-  mysql:
-    image: mysql:8.0
-    container_name: laravel_mysql
-    restart: always
-    command: --default-authentication-plugin=mysql_native_password
-    environment:
-      MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: laravel_user
-      MYSQL_PASSWORD: password
-    ports:
-      - "3306:3306"
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
-      interval: 5s
-      timeout: 5s
-      retries: 20
-    volumes:
-      - mysql_data:/var/lib/mysql
-    networks:
-      - laravel_red_2025
-
-  phpmyadmin:
-    image: phpmyadmin:5.2.1
-    container_name: laravel_phpmyadmin
-    restart: always
-    ports:
-      - "8080:80"
-    environment:
-      PMA_HOST: mysql
-      PMA_USER: root
-      PMA_PASSWORD: root
-      MYSQL_ROOT_PASSWORD: root
-    depends_on:
-      mysql:
-        condition: service_healthy
-    networks:
-      - laravel_red_2025
-
-  node:
+  cliente_node:
     image: node:22
-    container_name: laravel_node
+    container_name: cliente_node
     working_dir: /var/www
     volumes:
       - .:/var/www
     command: bash -c "npm install && npm run dev"
     ports:
-      - "5173:5173"
+      - "5174:5173"
     networks:
       - laravel_red_2025
 
-  composer:
+  cliente_composer:
     build:
       context: ./docker/php
-    container_name: laravel_composer
+    container_name: cliente_composer
     working_dir: /var/www
     volumes:
       - .:/var/www
@@ -93,6 +53,4 @@ services:
 
 networks:
   laravel_red_2025:
-
-volumes:
-  mysql_data:
+    external: true

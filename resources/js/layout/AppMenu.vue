@@ -18,6 +18,7 @@ const model = computed(() => [
         items: [
             { label: 'Mi billetera', icon: 'pi pi-wallet', to: '/dashboard' },
             { label: 'Buscamos oportunidades', icon: 'pi pi-search-plus', to: '/Buscar/Oportunidades' },
+            { label: 'Subasta online', icon: 'pi pi-search-plus', to: '/Subasta/Online' },
             { label: 'Mi dashboard', icon: 'pi pi-chart-line', to: '/dashboard2' },
             {
                 label: 'Información Bancaria', icon: 'pi pi-building',
