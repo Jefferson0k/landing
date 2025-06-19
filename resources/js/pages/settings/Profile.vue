@@ -1,6 +1,5 @@
 <template>
     <AppLayout>
-
         <Head title="Perfil" />
         <div class="card">
             <template v-if="isLoading">
@@ -30,6 +29,7 @@
                     <TabList>
                         <Tab value="0">Perfil</Tab>
                         <Tab value="1">Contraseña</Tab>
+                        <Tab value="2">Historial</Tab>
                     </TabList>
                     <TabPanels>
                         <TabPanel value="0">
@@ -38,12 +38,16 @@
                         <TabPanel value="1">
                             <PasswordPerdil />
                         </TabPanel>
+                        <TabPanel value="2">
+                            <Historial />
+                        </TabPanel>
                     </TabPanels>
                 </Tabs>
             </template>
         </div>
     </AppLayout>
 </template>
+
 <script setup>
 import { ref, onMounted } from 'vue';
 import { Head, usePage } from '@inertiajs/vue3';
@@ -54,13 +58,14 @@ import TabList from 'primevue/tablist';
 import Tab from 'primevue/tab';
 import TabPanels from 'primevue/tabpanels';
 import TabPanel from 'primevue/tabpanel';
-import PasswordPerdil from './PasswordPerdil.vue';
+
 import perfil from './perfil.vue';
+import PasswordPerdil from './PasswordPerdil.vue';
+import Historial from './Historial.vue'; // Nuevo componente agregado
 
 const isLoading = ref(true);
 const page = usePage();
 
-// Obtener las propiedades necesarias para el componente perfil
 const mustVerifyEmail = page.props.mustVerifyEmail || false;
 const status = page.props.status || null;
 
@@ -70,4 +75,5 @@ onMounted(() => {
     }, 1000);
 });
 </script>
+
 <style scoped></style>

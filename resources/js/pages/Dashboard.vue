@@ -20,7 +20,7 @@ const home = ref({
 });
 
 const items = ref([
-  { label: 'Tasas fijas', disabled: true },
+  { label: 'Prestamos hipotecarios', disabled: true },
   { label: 'Mi perfil del inversionista', icon: 'pi pi-bolt', route: '/dashboard3' },
 ]);
 
@@ -40,7 +40,6 @@ function verOportunidades() {
   </div>
 
   <AppLayout v-else>
-    <div class="card">
       <Breadcrumb :home="home" :model="items">
         <template #item="{ item, props }">
           <Link v-if="item.route && !item.disabled" :href="item.route" v-bind="props.action">
@@ -62,7 +61,6 @@ function verOportunidades() {
         <h2>Bienvenido [ {{ user.name }} ]a tu perfil del inversionista</h2>
       </div>
       <StatsWidget />
-    </div>
 
     <BestSellingWidget />
     <br>
