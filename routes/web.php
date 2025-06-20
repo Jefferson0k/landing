@@ -19,6 +19,10 @@ Route::get('/', function () {
 Route::get('/Nosotros', [NosotrosWebController::class, 'index'])->name('index.view');
 Route::get('/registro/clientes', [ClientesWebController::class, 'index'])->name('index.view');
 
+Route::get('/blog', [NosotrosWebController::class, 'blog'])->name('blog.view');
+Route::get('/contactanos', [NosotrosWebController::class, 'contactanos'])->name('contactanos.view');
+Route::get('/productos', [NosotrosWebController::class, 'productos'])->name('productos.view');
+
 #Panel de administración
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {
