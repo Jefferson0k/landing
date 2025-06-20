@@ -9,7 +9,12 @@ const isLoginPage = computed(() =>
     ['/login', '/auth/login'].includes(page.url)
 );
 
-// Scroll suave al hacer clic en los links
+// Función para navegación con Inertia
+function navigateTo(route) {
+    router.visit(route);
+}
+
+// Scroll suave al hacer clic en los links (para secciones internas)
 function smoothScroll(id) {
     document.body.click();
     const element = document.getElementById(id);
@@ -24,7 +29,7 @@ function smoothScroll(id) {
 
 <template>
     <Link class="flex items-center" href="/">
-        <span class="text-surface-900 dark:text-surface-0 font-medium text-2xl leading-normal mr-20">ZUMA</span>
+        <span class="text-surface-900 dark:text-surface-0 font-medium text-4xl leading-normal mr-20">ZUMA</span>
     </Link>
 
     <!-- Botón hamburguesa (para móviles) -->
@@ -42,25 +47,28 @@ function smoothScroll(id) {
             <ul
                 class="list-none p-0 m-0 flex lg:items-center select-none flex-col lg:flex-row cursor-pointer gap-8">
                 <li>
-                    <a @click="smoothScroll('hero')"
+                    <a @click="navigateTo('/Nosotros')"
                         class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
                         <span>Nosotros</span>
                     </a>
                 </li>
                 <li>
-                    <a @click="smoothScroll('features')"
+                    <!-- Opción 2: Usando router.visit -->
+                    <a @click="navigateTo('/productos')"
                         class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
                         <span>Productos</span>
                     </a>
                 </li>
                 <li>
-                    <a @click="smoothScroll('highlights')"
+                    <!-- Opción 3: Usando Link component con named route -->
+                    <Link :href="route('contactanos.view')"
                         class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
                         <span>Contáctanos</span>
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a @click="smoothScroll('pricing')"
+                    <!-- Navegación al blog -->
+                    <a @click="navigateTo('/blog')"
                         class="px-0 py-4 text-surface-900 dark:text-surface-0 font-medium text-xl">
                         <span>Blog</span>
                     </a>
@@ -82,7 +90,7 @@ function smoothScroll(id) {
                 <Button
                     label="Regístrate"
                     severity="warn"
-                    to="/auth/login"
+                    @click="() => router.visit('/auth/login')"
                     rounded
                 />
             </div>
